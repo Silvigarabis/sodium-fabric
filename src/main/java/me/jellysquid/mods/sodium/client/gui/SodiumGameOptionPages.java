@@ -18,6 +18,7 @@ import net.minecraft.client.options.GraphicsMode;
 import net.minecraft.client.options.Option;
 import net.minecraft.client.options.ParticlesMode;
 import net.minecraft.client.util.Window;
+import net.minecraft.text.TranslatableText;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,23 +32,23 @@ public class SodiumGameOptionPages {
 
         groups.add(OptionGroup.createBuilder()
                 .add(OptionImpl.createBuilder(int.class, vanillaOpts)
-                        .setName("View Distance")
-                        .setTooltip("The view distance controls how far away terrain will be rendered. Lower distances mean that less terrain will be " +
-                                "rendered, improving frame rates.")
+                        .setName(new TranslatableText("View Distance").getString())
+                        .setTooltip(new TranslatableText("The view distance controls how far away terrain will be rendered. Lower distances mean that less terrain will be " +
+                                "rendered, improving frame rates.").getString())
                         .setControl(option -> new SliderControl(option, 2, 32, 1, ControlValueFormatter.quantity("Chunks")))
                         .setBinding((options, value) -> options.viewDistance = value, options -> options.viewDistance)
                         .setImpact(OptionImpact.HIGH)
                         .setFlags(OptionFlag.REQUIRES_RENDERER_RELOAD)
                         .build())
                 .add(OptionImpl.createBuilder(int.class, vanillaOpts)
-                        .setName("Brightness")
-                        .setTooltip("Controls the brightness (gamma) of the game.")
+                        .setName(new TranslatableText("Brightness").getString())
+                        .setTooltip(new TranslatableText("Controls the brightness (gamma) of the game.").getString())
                         .setControl(opt -> new SliderControl(opt, 0, 100, 1, ControlValueFormatter.brightness()))
                         .setBinding((opts, value) -> opts.gamma = value * 0.01D, (opts) -> (int) (opts.gamma / 0.01D))
                         .build())
                 .add(OptionImpl.createBuilder(boolean.class, sodiumOpts)
-                        .setName("Clouds")
-                        .setTooltip("Controls whether or not clouds will be visible.")
+                        .setName(new TranslatableText("Clouds").getString())
+                        .setTooltip(new TranslatableText("Controls whether or not clouds will be visible.").getString())
                         .setControl(TickBoxControl::new)
                         .setBinding((opts, value) -> {
                             opts.quality.enableClouds = value;
