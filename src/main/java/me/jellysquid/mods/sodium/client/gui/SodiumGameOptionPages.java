@@ -78,8 +78,8 @@ public class SodiumGameOptionPages {
                         }, opts -> opts.guiScale)
                         .build())
                 .add(OptionImpl.createBuilder(boolean.class, vanillaOpts)
-                        .setName(new TranslatableText(("Fullscreen").getString())
-                        .setTooltip(new TranslatableText(("If enabled, the game will display in full-screen (if supported).").getString())
+                        .setName(new TranslatableText("Fullscreen").getString())
+                        .setTooltip(new TranslatableText("If enabled, the game will display in full-screen (if supported).").getString())
                         .setControl(TickBoxControl::new)
                         .setBinding((opts, value) -> {
                             opts.fullscreen = value;
@@ -167,8 +167,8 @@ public class SodiumGameOptionPages {
                         .setImpact(OptionImpact.MEDIUM)
                         .build())
                 .add(OptionImpl.createBuilder(ParticlesMode.class, vanillaOpts)
-                        .setName(new TranslatableText("Particle Quality")
-                        .setTooltip(new TranslatableText("Controls the maximum number of particles which can be present on screen at any one time.")
+                        .setName(new TranslatableText("Particle Quality").getString())
+                        .setTooltip(new TranslatableText("Controls the maximum number of particles which can be present on screen at any one time.").getString())
                         .setControl(opt -> new CyclingControl<>(opt, ParticlesMode.class, new String[] { "High", "Medium", "Low" }))
                         .setBinding((opts, value) -> opts.particles = value, (opts) -> opts.particles)
                         .setImpact(OptionImpact.MEDIUM)
