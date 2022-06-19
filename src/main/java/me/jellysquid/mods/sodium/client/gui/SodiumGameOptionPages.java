@@ -190,7 +190,7 @@ public class SodiumGameOptionPages {
                         .setName(new TranslatableText("Biome Blend").getString())
                         .setTooltip(new TranslatableText("Controls the range which biomes will be sampled for block colorization. " +
                                 "Higher values greatly increase the amount of time it takes to build chunks for diminishing improvements in quality.").getString())
-                        .setControl(option -> new SliderControl(option, 0, 7, 1, ControlValueFormatter.quantityOrDisabled(new TranslatableText("block(s)").getString(), new TranslatableText("None").getString()))
+                        .setControl(option -> new SliderControl(option, 0, 7, 1, ControlValueFormatter.quantityOrDisabled(new TranslatableText("block(s)").getString(), new TranslatableText("None").getString())))
                         .setBinding((opts, value) -> opts.biomeBlendRadius = value, opts -> opts.biomeBlendRadius)
                         .setImpact(OptionImpact.LOW)
                         .setFlags(OptionFlag.REQUIRES_RENDERER_RELOAD)
