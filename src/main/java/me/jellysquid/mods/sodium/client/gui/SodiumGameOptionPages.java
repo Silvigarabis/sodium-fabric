@@ -128,7 +128,7 @@ public class SodiumGameOptionPages {
                 .add(OptionImpl.createBuilder(AttackIndicator.class, vanillaOpts)
                         .setName(new TranslatableText("Attack Indicator").getString())
                         .setTooltip(new TranslatableText("Controls where the Attack Indicator is displayed on screen.").getString())
-                        .setControl(opts -> new CyclingControl<>(opts, AttackIndicator.class, new Text[] { new TranslatableText("Off").getString(), new TranslatableText("Crosshair").getString(), new TranslatableText("Hotbar").getString() }))
+                        .setControl(opts -> new CyclingControl<>(opts, AttackIndicator.class, new String[] { new TranslatableText("Off").getString(), new TranslatableText("Crosshair").getString(), new TranslatableText("Hotbar").getString() }))
                         .setBinding((opts, value) -> opts.attackIndicator = value, (opts) -> opts.attackIndicator)
                         .build())
                 .build());
@@ -144,7 +144,7 @@ public class SodiumGameOptionPages {
                         .setName(new TranslatableText("Graphics Quality").getString())
                         .setTooltip(new TranslatableText("The default graphics quality controls some legacy options and is necessary for mod compatibility. If the options below are left to " +
                                 "\"Default\", they will use this setting.").getString())
-                        .setControl(option -> new CyclingControl<>(option, GraphicsMode.class, new Text[] { new TranslatableText("Fast").getString(), new TranslatableText("Fancy").getString(), new TranslatableText("Fabulous").getString() }))
+                        .setControl(option -> new CyclingControl<>(option, GraphicsMode.class, new String[] { new TranslatableText("Fast").getString(), new TranslatableText("Fancy").getString(), new TranslatableText("Fabulous").getString() }))
                         .setBinding(
                                 (opts, value) -> opts.graphicsMode = value,
                                 opts -> opts.graphicsMode)
