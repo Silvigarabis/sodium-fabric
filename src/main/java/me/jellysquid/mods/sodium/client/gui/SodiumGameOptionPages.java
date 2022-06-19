@@ -131,7 +131,7 @@ public class SodiumGameOptionPages {
                         .build())
                 .build());
 
-        return new OptionPage("General", ImmutableList.copyOf(groups));
+        return new OptionPage(new TranslatableText("General").getString(), ImmutableList.copyOf(groups));
     }
 
     public static OptionPage quality() {
@@ -233,7 +233,7 @@ public class SodiumGameOptionPages {
                 .build());
 
 
-        return new OptionPage("Quality", ImmutableList.copyOf(groups));
+        return new OptionPage(new TranslatableText("Quality").getString(), ImmutableList.copyOf(groups));
     }
 
     public static OptionPage advanced() {
@@ -353,6 +353,6 @@ public class SodiumGameOptionPages {
                 )
                 .build());
 
-        return new OptionPage("Advanced", ImmutableList.copyOf(groups));
+        return new OptionPage(new TranslatableText("Advanced").getString(), ImmutableList.copyOf(groups));
     }
 }
