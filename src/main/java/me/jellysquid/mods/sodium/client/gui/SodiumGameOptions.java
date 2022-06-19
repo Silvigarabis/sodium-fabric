@@ -67,7 +67,7 @@ public class SodiumGameOptions {
         private final String name;
 
         GraphicsQuality(String name) {
-            this.name = new TranslatableText(name);
+            this.name = new TranslatableText(name).getString();
         }
 
         @Override
@@ -88,7 +88,7 @@ public class SodiumGameOptions {
         private final String name;
 
         LightingQuality(String name) {
-            this.name = new TranslatableText(name);
+            this.name = new TranslatableText(name).getString();
         }
 
         @Override
