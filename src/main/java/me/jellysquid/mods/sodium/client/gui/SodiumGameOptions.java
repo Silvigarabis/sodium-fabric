@@ -7,6 +7,9 @@ import me.jellysquid.mods.sodium.client.SodiumClientMod;
 import me.jellysquid.mods.sodium.client.gui.options.TextProvider;
 import me.jellysquid.mods.sodium.client.render.chunk.backends.multidraw.MultidrawChunkRenderBackend;
 import net.minecraft.client.options.GraphicsMode;
+import net.minecraft.text.LiteralText;
+import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 
 import java.io.FileReader;
 import java.io.IOException;

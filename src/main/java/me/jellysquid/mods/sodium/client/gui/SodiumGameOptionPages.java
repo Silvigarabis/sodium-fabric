@@ -18,6 +18,8 @@ import net.minecraft.client.options.GraphicsMode;
 import net.minecraft.client.options.Option;
 import net.minecraft.client.options.ParticlesMode;
 import net.minecraft.client.util.Window;
+import net.minecraft.text.LiteralText;
+import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 
 import java.util.ArrayList;
