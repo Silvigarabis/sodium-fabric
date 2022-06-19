@@ -35,7 +35,7 @@ public class SodiumGameOptionPages {
                         .setName(new TranslatableText("View Distance").getString())
                         .setTooltip(new TranslatableText("The view distance controls how far away terrain will be rendered. Lower distances mean that less terrain will be " +
                                 "rendered, improving frame rates.").getString())
-                        .setControl(option -> new SliderControl(option, 2, 32, 1, ControlValueFormatter.quantity("Chunks")))
+                        .setControl(option -> new SliderControl(option, 2, 32, 1, ControlValueFormatter.quantity(new TranslatableText("Chunks").getString())))
                         .setBinding((options, value) -> options.viewDistance = value, options -> options.viewDistance)
                         .setImpact(OptionImpact.HIGH)
                         .setFlags(OptionFlag.REQUIRES_RENDERER_RELOAD)
@@ -126,7 +126,7 @@ public class SodiumGameOptionPages {
                 .add(OptionImpl.createBuilder(AttackIndicator.class, vanillaOpts)
                         .setName(new TranslatableText("Attack Indicator").getString())
                         .setTooltip(new TranslatableText("Controls where the Attack Indicator is displayed on screen.").getString())
-                        .setControl(opts -> new CyclingControl<>(opts, AttackIndicator.class, new String[] { "Off", "Crosshair", "Hotbar" }))
+                        .setControl(opts -> new CyclingControl<>(opts, AttackIndicator.class, new Text[] { new TranslatableText("Off"), new TranslatableText("Crosshair"), new TranslatableText("Hotbar") }))
                         .setBinding((opts, value) -> opts.attackIndicator = value, (opts) -> opts.attackIndicator)
                         .build())
                 .build());
@@ -142,7 +142,7 @@ public class SodiumGameOptionPages {
                         .setName(new TranslatableText("Graphics Quality").getString())
                         .setTooltip(new TranslatableText("The default graphics quality controls some legacy options and is necessary for mod compatibility. If the options below are left to " +
                                 "\"Default\", they will use this setting.").getString())
-                        .setControl(option -> new CyclingControl<>(option, GraphicsMode.class, new String[] { "Fast", "Fancy", "Fabulous" }))
+                        .setControl(option -> new CyclingControl<>(option, GraphicsMode.class, new Text[] { new TranslatableText("Fast"), new TranslatableText("Fancy"), new TranslatableText("Fabulous") }))
                         .setBinding(
                                 (opts, value) -> opts.graphicsMode = value,
                                 opts -> opts.graphicsMode)
