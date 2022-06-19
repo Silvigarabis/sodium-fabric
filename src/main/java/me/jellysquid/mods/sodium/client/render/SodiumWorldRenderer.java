@@ -427,8 +427,4 @@ public class SodiumWorldRenderer implements ChunkStatusListener {
     public ChunkRenderBackend<?> getChunkRenderer() {
         return this.chunkRenderBackend;
     }
-
-    public ChunkRenderManager<?> getChunkRenderManager() {
-        return this.chunkRenderManager;
-    }
 }

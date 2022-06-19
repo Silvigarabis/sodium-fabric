@@ -1,7 +1,6 @@
 package me.jellysquid.mods.sodium.client;
 
 import me.jellysquid.mods.sodium.client.gui.SodiumGameOptions;
-import me.jellysquid.mods.sodium.client.util.FlawlessFrames;
 import me.jellysquid.mods.sodium.client.util.UnsafeUtil;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
@@ -26,8 +25,6 @@ public class SodiumClientMod implements ClientModInitializer {
         MOD_VERSION = mod.getMetadata()
                 .getVersion()
                 .getFriendlyString();
-
-        FlawlessFrames.onClientInitialization();
     }
 
     public static SodiumGameOptions options() {
