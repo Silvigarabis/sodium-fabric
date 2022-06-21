@@ -64,14 +64,14 @@ public class SodiumGameOptions {
         FANCY("Fancy"),
         FAST("Fast");
 
-        private final String name;
+        private final Text name;
 
         GraphicsQuality(String name) {
-            this.name = new TranslatableText(name).getString();
+            this.name = new TranslatableText(name);
         }
 
         @Override
-        public String getLocalizedName() {
+        public Text getLocalizedName() {
             return this.name;
         }
 
@@ -85,14 +85,14 @@ public class SodiumGameOptions {
         LOW("Low"),
         OFF("Off");
 
-        private final String name;
+        private final Text name;
 
         LightingQuality(String name) {
-            this.name = new TranslatableText(name).getString();
+            this.name = new TranslatableText(name);
         }
 
         @Override
-        public String getLocalizedName() {
+        public Text getLocalizedName() {
             return this.name;
         }
     }

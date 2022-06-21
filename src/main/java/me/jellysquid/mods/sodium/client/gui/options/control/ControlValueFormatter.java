@@ -1,20 +1,22 @@
 package me.jellysquid.mods.sodium.client.gui.options.control;
 
+import net.minecraft.text.TranslatableText;
+
 public interface ControlValueFormatter {
     static ControlValueFormatter guiScale() {
-        return (v) -> (v == 0) ? "Auto" : v + "x";
+        return (v) -> (v == 0) ? new TranslatableText("Auto").getString() : v + "x";
     }
 
     static ControlValueFormatter fpsLimit() {
-        return (v) -> (v == 260) ? "Unlimited" : v + " FPS";
+        return (v) -> (v == 260) ? new TranslatableText("Unlimited").getString() : v + " FPS";
     }
 
     static ControlValueFormatter brightness() {
         return (v) -> {
             if (v == 0) {
-                return "Moody";
+                return new TranslatableText("Moody").getString();
             } else if (v == 100) {
-                return "Bright";
+                return new TranslatableText("Bright").getString();
             } else {
                 return v + "%";
             }
@@ -31,8 +33,8 @@ public interface ControlValueFormatter {
         return (v) -> v + "x";
     }
 
-    static ControlValueFormatter quantity(String name) {
-        return (v) -> v + " " + name;
+    static ControlValueFormatter quantity(TranslatableText translatableText) {
+        return (v) -> v + " " + translatableText;
     }
 
     static ControlValueFormatter quantityOrDisabled(String name, String disableText) {
