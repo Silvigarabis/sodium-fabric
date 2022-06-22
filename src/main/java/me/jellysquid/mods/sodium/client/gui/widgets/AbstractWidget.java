@@ -75,4 +75,5 @@ public abstract class AbstractWidget implements Drawable, Element {
     protected int getStringWidth(StringVisitable text) {
         return this.font.getWidth(text);
     }
+
 }

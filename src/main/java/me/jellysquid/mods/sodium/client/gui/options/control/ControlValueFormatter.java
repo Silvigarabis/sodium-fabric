@@ -33,8 +33,8 @@ public interface ControlValueFormatter {
         return (v) -> v + "x";
     }
 
-    static ControlValueFormatter quantity(TranslatableText translatableText) {
-        return (v) -> v + " " + translatableText;
+    static ControlValueFormatter quantity(String name) {
+        return (v) -> v + " " + name;
     }
 
     static ControlValueFormatter quantityOrDisabled(String name, String disableText) {
