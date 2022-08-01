@@ -229,7 +229,7 @@ public class SodiumOptionsGUI extends Screen {
         OptionImpact impact = option.getImpact();
 
         if (impact != null) {
-            tooltip.add(Language.getInstance().reorder(new TranslatableText("sodium.options.performance_impact_string").getString()).formatted(Formatting.GRAY)));
+            tooltip.add(Language.getInstance().reorder(new TranslatableText(Formatting.GRAY + "Performance Impact: " + impact.toDisplayString())));
         }
 
         int boxHeight = (tooltip.size() * 12) + boxPadding;
