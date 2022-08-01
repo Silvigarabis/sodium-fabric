@@ -23,6 +23,7 @@
   "sodium.options.smooth_lighting.tooltip": "控制平滑光照效果的品质。\n\n关 - 无平滑滑光照\n低 - 只有方块应用平滑光照\n高（新！） - 方块和实体都应用平滑光照",
   "sodium.options.biome_blend.tooltip": "控制生物群系之间方块颜色的采样范围。较高的值会极大地增加渲染区块时因质量改进而所花费的时间。",
   "sodium.options.biome_blend.value": "个方块",
+  "sodium.options.biome_blend.value.none": "None",
   "sodium.options.entity_distance.tooltip": "控制实体的显示距离。较高的值会以牺牲帧率为代价增加渲染距离。",
   "sodium.options.entity_shadows.tooltip": "启用后，在生物和其他实体下面渲染简单的阴影。",
   "sodium.options.vignette.name":"晕影",

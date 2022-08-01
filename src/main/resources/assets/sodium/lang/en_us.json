@@ -27,6 +27,7 @@
   "sodium.options.smooth_lighting.off": "Off",
   "sodium.options.biome_blend.tooltip": "Controls the range which biomes will be sampled for block colorization. Higher values greatly increase the amount of time it takes to build chunks for diminishing improvements in quality.",
   "sodium.options.biome_blend.value": "block(s)",
+  "sodium.options.biome_blend.value.none": "None",
   "sodium.options.entity_distance.tooltip": "Controls how far away entities can render from the player. Higher values increase the render distance at the expense of frame rates.",
   "sodium.options.entity_shadows.tooltip": "If enabled, basic shadows will be rendered beneath mobs and other entities.",
   "sodium.options.vignette.name":"Vignette",

@@ -178,7 +178,7 @@ public class SodiumGameOptionPages {
                 .add(OptionImpl.createBuilder(int.class, vanillaOpts)
                         .setName(new TranslatableText("options.biomeBlendRadius").getString())
                         .setTooltip(new TranslatableText("sodium.options.biome_blend.tooltip").getString())
-                        .setControl(option -> new SliderControl(option, 0, 7, 1, ControlValueFormatter.quantityOrDisabled("block(s)", "None")))
+                        .setControl(option -> new SliderControl(option, 0, 7, 1, ControlValueFormatter.quantityOrDisabled(new TranslatableText("sodium.options.biome_blend.value").getString(), new TranslatableText("sodium.options.biome_blend.value.none").getString())))
                         .setBinding((opts, value) -> opts.biomeBlendRadius = value, opts -> opts.biomeBlendRadius)
                         .setImpact(OptionImpact.LOW)
                         .setFlags(OptionFlag.REQUIRES_RENDERER_RELOAD)
