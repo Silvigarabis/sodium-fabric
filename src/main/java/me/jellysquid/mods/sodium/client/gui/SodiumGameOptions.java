@@ -16,6 +16,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.stream.Stream;
+import net.minecraft.text.TranslatableText;
 
 public class SodiumGameOptions {
     public final QualitySettings quality = new QualitySettings();
