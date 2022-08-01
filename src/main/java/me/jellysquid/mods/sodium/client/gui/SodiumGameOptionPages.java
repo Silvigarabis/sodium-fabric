@@ -119,7 +119,7 @@ public class SodiumGameOptionPages {
                         .setBinding(new VanillaBooleanOptionBinding(Option.VIEW_BOBBING))
                         .build())
                 .add(OptionImpl.createBuilder(AttackIndicator.class, vanillaOpts)
-                        .setName(new TranslatableText("sodium.options.view_bobbing.tooltip").getString())
+                        .setName(new TranslatableText("options.attackIndicator").getString())
                         .setTooltip(new TranslatableText("sodium.options.attack_indicator.tooltip").getString())
                         .setControl(opts -> new CyclingControl<>(opts, AttackIndicator.class, new String[] { "Off", "Crosshair", "Hotbar" }))
                         .setBinding((opts, value) -> opts.attackIndicator = value, (opts) -> opts.attackIndicator)
