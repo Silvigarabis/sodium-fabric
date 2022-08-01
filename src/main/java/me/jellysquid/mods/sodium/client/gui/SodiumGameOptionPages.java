@@ -102,7 +102,7 @@ public class SodiumGameOptionPages {
                         .build())
                 .add(OptionImpl.createBuilder(int.class, vanillaOpts)
                         .setName(new TranslatableText("options.framerateLimit").getString())
-                        .setTooltip(new TranslatableText("sodium.options.fps_limit.tooltip")
+                        .setTooltip(new TranslatableText("sodium.options.fps_limit.tooltip").getString())
                         .setControl(option -> new SliderControl(option, 5, 260, 5, ControlValueFormatter.fpsLimit()))
                         .setBinding((opts, value) -> {
                             opts.maxFps = value;
@@ -266,7 +266,7 @@ public class SodiumGameOptionPages {
                         .build()
                 )
                 .add(OptionImpl.createBuilder(boolean.class, sodiumOpts)
-                        .setName(new TranslatableText("sodium.options.use_fog_occlusion.name").getString()
+                        .setName(new TranslatableText("sodium.options.use_fog_occlusion.name").getString())
                         .setTooltip(new TranslatableText("sodium.options.use_fog_occlusion.tooltip").getString())
                         .setControl(TickBoxControl::new)
                         .setBinding((opts, value) -> opts.advanced.useFogOcclusion = value, opts -> opts.advanced.useFogOcclusion)
