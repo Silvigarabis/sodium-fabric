@@ -65,7 +65,7 @@ def getVersionMetadata() {
 
     // CI builds only
     if (build_id != null) {
-        return "build.${build_id}"
+        return "build.4+${build_id}"
     }
 
     if (grgit != null) {
