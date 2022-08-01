@@ -20,7 +20,6 @@
   "sodium.options.graphics_quality.tooltip": "The default graphics quality controls some legacy options and is necessary for mod compatibility. If the options below are left to \"Default\", they will use this setting.",
   "sodium.options.clouds_quality.tooltip": "Controls the quality of rendered clouds in the sky.",
   "sodium.options.weather_quality.tooltip": "Controls the quality of rain and snow effects.",
-  "sodium.options.particle_quality.name": "Particle Quality",
   "sodium.options.particle_quality.tooltip": "Controls the maximum number of particles which can be present on screen at any one time.",
   "sodium.options.smooth_lighting.tooltip": "Controls the quality of smooth lighting effects.\n\nOff - No smooth lighting\nLow - Smooth block lighting only\nHigh (new!) - Smooth block and entity lighting",
   "sodium.options.smooth_lighting.high": "High",
