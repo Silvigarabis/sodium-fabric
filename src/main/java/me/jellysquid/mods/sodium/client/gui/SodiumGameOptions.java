@@ -7,6 +7,9 @@ import me.jellysquid.mods.sodium.client.SodiumClientMod;
 import me.jellysquid.mods.sodium.client.gui.options.TextProvider;
 import me.jellysquid.mods.sodium.client.render.chunk.backends.multidraw.MultidrawChunkRenderBackend;
 import net.minecraft.client.options.GraphicsMode;
+import net.minecraft.text.LiteralText;
+import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -16,7 +19,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.stream.Stream;
-import net.minecraft.text.TranslatableText;
 
 public class SodiumGameOptions {
     public final QualitySettings quality = new QualitySettings();
@@ -58,14 +60,14 @@ public class SodiumGameOptions {
     }
 
     public enum GraphicsQuality implements TextProvider {
-        DEFAULT(new TranslatableText("generator.default").getString()),
-        FANCY(new TranslatableText("options.clouds.fancy").getString()),
-        FAST(new TranslatableText("options.clouds.fast").getString());
+        DEFAULT("Default"),
+        FANCY("Fancy"),
+        FAST("Fast");
 
         private final String name;
 
         GraphicsQuality(String name) {
-            this.name = name;
+            this.name = new TranslatableText(name).getString();
         }
 
         @Override
@@ -79,14 +81,14 @@ public class SodiumGameOptions {
     }
 
     public enum LightingQuality implements TextProvider {
-        HIGH(new TranslatableText("sodium.options.smooth_lighting.high").getString()),
-        LOW(new TranslatableText("sodium.options.smooth_lighting.low").getString()),
-        OFF(new TranslatableText("sodium.options.smooth_lighting.off").getString());
+        HIGH("High"),
+        LOW("Low"),
+        OFF("Off");
 
         private final String name;
 
         LightingQuality(String name) {
-            this.name = name;
+            this.name = new TranslatableText(name).getString();
         }
 
         @Override
