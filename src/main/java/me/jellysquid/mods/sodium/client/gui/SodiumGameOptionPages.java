@@ -136,7 +136,7 @@ public class SodiumGameOptionPages {
                 .add(OptionImpl.createBuilder(GraphicsMode.class, vanillaOpts)
                         .setName(new TranslatableText("options.graphics").getString())
                         .setTooltip(new TranslatableText("sodium.options.graphics_quality.tooltip").getString())
-                        .setControl(option -> new CyclingControl<>(option, GraphicsMode.class, new String[] { "Fast", "Fancy", "Fabulous" }))
+                        .setControl(option -> new CyclingControl<>(option, GraphicsMode.class, new String[] { new TranslatableText("options.graphics.fast").getString(), new TranslatableText("options.graphics.fancy").getString(), new TranslatableText("options.graphics.fabulous").getString() }))
                         .setBinding(
                                 (opts, value) -> opts.graphicsMode = value,
                                 opts -> opts.graphicsMode)
@@ -163,7 +163,7 @@ public class SodiumGameOptionPages {
                 .add(OptionImpl.createBuilder(ParticlesMode.class, vanillaOpts)
                         .setName(new TranslatableText("options.particles").getString())
                         .setTooltip(new TranslatableText("sodium.options.particle_quality.tooltip").getString())
-                        .setControl(opt -> new CyclingControl<>(opt, ParticlesMode.class, new String[] { "High", "Medium", "Low" }))
+                        .setControl(opt -> new CyclingControl<>(opt, ParticlesMode.class, new String[] { new TranslatableText("options.particles.all").getString(), new TranslatableText("options.particles.decreased").getString(), new TranslatableText("options.particles.minimal").getString() }))
                         .setBinding((opts, value) -> opts.particles = value, (opts) -> opts.particles)
                         .setImpact(OptionImpact.MEDIUM)
                         .build())
