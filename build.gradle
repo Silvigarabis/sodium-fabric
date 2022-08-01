@@ -4,7 +4,7 @@ plugins {
 }
 
 archivesBaseName = "${project.archives_base_name}-mc${project.minecraft_version}"
-version = "${project.mod_version}+${getVersionMetadata()}"
+version = "${project.mod_version}.${getVersionMetadata()}"
 group = project.maven_group
 
 minecraft {
@@ -65,7 +65,7 @@ def getVersionMetadata() {
 
     // CI builds only
     if (build_id != null) {
-        return ".${build_id}+build.4"
+        return "${build_id}+build.4"
     }
 
     if (grgit != null) {
