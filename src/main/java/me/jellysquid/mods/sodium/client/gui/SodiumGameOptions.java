@@ -57,9 +57,9 @@ public class SodiumGameOptions {
     }
 
     public enum GraphicsQuality implements TextProvider {
-        DEFAULT("Default"),
-        FANCY("Fancy"),
-        FAST("Fast");
+        DEFAULT(new TranslatableText("generator.default").getString()),
+        FANCY(new TranslatableText("options.clouds.fancy").getString()),
+        FAST(new TranslatableText("options.clouds.fast").getString());
 
         private final String name;
 
@@ -78,9 +78,9 @@ public class SodiumGameOptions {
     }
 
     public enum LightingQuality implements TextProvider {
-        HIGH("High"),
-        LOW("Low"),
-        OFF("Off");
+        HIGH(new TranslatableText("sodium.options.smooth_lighting.high").getString()),
+        LOW(new TranslatableText("sodium.options.smooth_lighting.low").getString()),
+        OFF(new TranslatableText("sodium.options.smooth_lighting.off").getString());
 
         private final String name;
 
