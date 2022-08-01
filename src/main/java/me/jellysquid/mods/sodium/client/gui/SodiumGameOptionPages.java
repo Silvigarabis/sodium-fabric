@@ -121,7 +121,7 @@ public class SodiumGameOptionPages {
                 .add(OptionImpl.createBuilder(AttackIndicator.class, vanillaOpts)
                         .setName(new TranslatableText("options.attackIndicator").getString())
                         .setTooltip(new TranslatableText("sodium.options.attack_indicator.tooltip").getString())
-                        .setControl(opts -> new CyclingControl<>(opts, AttackIndicator.class, new String[] { "Off", "Crosshair", "Hotbar" }))
+                        .setControl(opts -> new CyclingControl<>(opts, AttackIndicator.class, new String[] { new TranslatableText("options.off").getString(), new TranslatableText("options.attack.crosshair").getString(), new TranslatableText("options.attack.hotbar").getString() }))
                         .setBinding((opts, value) -> opts.attackIndicator = value, (opts) -> opts.attackIndicator)
                         .build())
                 .build());

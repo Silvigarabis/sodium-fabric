@@ -44,6 +44,7 @@
   "sodium.options.use_particle_culling.tooltip": "启用后，将仅渲染可见的颗粒。当周围有许多颗粒时，这可以显著地提高帧率。",
   "sodium.options.allow_direct_memory_access.name": "允许直接访问内存",
   "sodium.options.allow_direct_memory_access.tooltip": "启用后，将允许某些关键代码使用路径直接访问内存来提高性能。 这通常会大大降低区块和实体渲染的CPU性能，但会使诊断某些错误和崩溃变得更加困难。 如果你被要求或以其他方式知道您在做什么，你应该只禁用它。",
+  "sodium.options.animate_only_visible_textures.name":"仅渲染可见的动态材质",
   "sodium.options.animate_only_visible_textures.tooltip": "启用后，只会更新可见的动态材质。这可以大大提高某些硬件的帧率，尤其是对于较大的资源包。如果遇到某些材质无动画的问题，请禁用此选项。",
   "sodium.options.enable_memory_tracing.name": "对内存使用内置函数",
   "sodium.options.enable_memory_tracing.tooltip": "启用后，出现特定受顶点限制的情况时（如粒子和文本的渲染）将使用特殊的内部函数来加速客户端内存的复制。此选项仅用于调试目的，除非你知道自己在干什么，否则应保持启用。",
