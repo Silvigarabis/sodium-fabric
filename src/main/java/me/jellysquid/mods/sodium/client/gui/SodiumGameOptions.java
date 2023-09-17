@@ -7,6 +7,8 @@ import me.jellysquid.mods.sodium.client.SodiumClientMod;
 import me.jellysquid.mods.sodium.client.gui.options.TextProvider;
 import me.jellysquid.mods.sodium.client.render.chunk.backends.multidraw.MultidrawChunkRenderBackend;
 import net.minecraft.client.options.GraphicsMode;
+import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -57,18 +59,18 @@ public class SodiumGameOptions {
     }
 
     public enum GraphicsQuality implements TextProvider {
-        DEFAULT("Default"),
-        FANCY("Fancy"),
-        FAST("Fast");
+        DEFAULT("generator.default"),
+        FANCY("options.clouds.fancy"),
+        FAST("options.clouds.fast");
 
-        private final String name;
+        private final Text name;
 
         GraphicsQuality(String name) {
-            this.name = name;
+            this.name = new TranslatableText(name);
         }
 
         @Override
-        public String getLocalizedName() {
+        public Text getLocalizedName() {
             return this.name;
         }
 
@@ -78,18 +80,18 @@ public class SodiumGameOptions {
     }
 
     public enum LightingQuality implements TextProvider {
-        HIGH("High"),
-        LOW("Low"),
-        OFF("Off");
+        HIGH("sodium.options.smooth_lighting.high"),
+        LOW("sodium.options.smooth_lighting.low"),
+        OFF("sodium.options.smooth_lighting.off");
 
-        private final String name;
+        private final Text name;
 
         LightingQuality(String name) {
-            this.name = name;
+            this.name = new TranslatableText(name);
         }
 
         @Override
-        public String getLocalizedName() {
+        public Text getLocalizedName() {
             return this.name;
         }
     }
