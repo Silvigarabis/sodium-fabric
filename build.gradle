@@ -70,6 +70,20 @@ jar {
     from "LICENSE.txt"
 }
 
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            name = 'localRepo'
+            url = "file://${buildDir}/repo"
+        }
+    }
+}
+
 def getVersionMetadata() {
     def build_id = System.getenv("GITHUB_RUN_NUMBER")
 
