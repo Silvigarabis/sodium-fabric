@@ -1,19 +1,21 @@
 plugins {
-    id 'fabric-loom' version '0.6-SNAPSHOT'
-    id 'org.ajoberstar.grgit' version '4.1.1'
+    id 'fabric-loom' version '1.3-SNAPSHOT'
+    id 'org.ajoberstar.grgit' version '5.0.0'
     id 'maven-publish'
 }
 
-sourceCompatibility = "1.8"
-targetCompatibility = "1.8"
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
 
 archivesBaseName = "${project.archives_base_name}-mc${project.minecraft_version}"
 version = "${project.mod_version}+${getVersionMetadata()}"
 group = project.maven_group
 
-minecraft {
-    refmapName = "mixins.sodium.refmap.json"
-    accessWidener = file("src/main/resources/sodium.accesswidener")
+loom {
+    mixin {
+        defaultRefmapName = "mixins.sodium.refmap.json"
+    }
+    accessWidenerPath.set file("src/main/resources/sodium.accesswidener")
 }
 
 configurations {
@@ -41,7 +43,7 @@ if (project.use_third_party_mods) {
     dependencies {
         // DataBreaker applies a number of patches to eliminate the loading of data fixers
         // This greatly reduces the amount of time needed to start the game, but is generally unsafe in production
-        modRuntime ("com.github.SuperCoder7979:databreaker:${project.databreaker_version}") {
+        modRuntimeOnly ("com.github.SuperCoder7979:databreaker:${project.databreaker_version}") {
             transitive = false
         }
     }
@@ -68,20 +70,6 @@ java {
 
 jar {
     from "LICENSE.txt"
-}
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-        }
-    }
-    repositories {
-        maven {
-            name = 'localRepo'
-            url = "file://${buildDir}/repo"
-        }
-    }
 }
 
 def getVersionMetadata() {
