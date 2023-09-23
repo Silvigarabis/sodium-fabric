@@ -13,7 +13,7 @@ import me.jellysquid.mods.sodium.client.util.math.MatrixUtil;
 import net.minecraft.client.model.ModelPart;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.util.math.Vec3f;
+import net.minecraft.client.util.math.Vector3f;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
@@ -50,7 +50,7 @@ public class MixinModelPart {
                 int norm = Norm3b.pack(normX, normY, normZ);
 
                 for (ModelPart.Vertex vertex : quad.vertices) {
-                    Vec3f pos = vertex.pos;
+                    Vector3f pos = vertex.pos;
 
                     float x1 = pos.getX() * NORM;
                     float y1 = pos.getY() * NORM;
