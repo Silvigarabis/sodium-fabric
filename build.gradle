@@ -1,6 +1,7 @@
 plugins {
-    id 'fabric-loom' version '0.6-SNAPSHOT'
-    id 'org.ajoberstar.grgit' version '4.1.0'
+    id 'maven-publish'
+    id 'fabric-loom' version '0.7-SNAPSHOT'
+    id 'org.ajoberstar.grgit' version '4.1.1'
 }
 
 archivesBaseName = "${project.archives_base_name}-mc${project.minecraft_version}"
@@ -12,11 +13,21 @@ minecraft {
     accessWidener = file("src/main/resources/sodium.accesswidener")
 }
 
+configurations {
+    modIncludeImplementation
+
+    include.extendsFrom modIncludeImplementation
+    modImplementation.extendsFrom modIncludeImplementation
+}
+
 dependencies {
     //to change the versions see the gradle.properties file
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
     mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+
+    modIncludeImplementation(fabricApi.module("fabric-api-base", project.fabric_version))
+    modIncludeImplementation(fabricApi.module("fabric-resource-loader-v0", project.fabric_version))
 }
 
 if (project.use_third_party_mods) {
@@ -58,6 +69,21 @@ java {
 
 jar {
     from "LICENSE.txt"
+}
+
+// configure the maven publication
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            // add all the jars that should be included when publishing to maven
+            artifact(remapJar) {
+                builtBy remapJar
+            }
+            artifact(sourcesJar) {
+                builtBy remapSourcesJar
+            }
+        }
+    }
 }
 
 def getVersionMetadata() {

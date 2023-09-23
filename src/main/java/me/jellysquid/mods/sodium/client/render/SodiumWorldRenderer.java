@@ -307,7 +307,7 @@ public class SodiumWorldRenderer implements ChunkStatusListener {
                 if (stage >= 0) {
                     MatrixStack.Entry entry = matrices.peek();
                     VertexConsumer transformer = new OverlayVertexConsumer(bufferBuilders.getEffectVertexConsumers().getBuffer(ModelLoader.BLOCK_DESTRUCTION_RENDER_LAYERS.get(stage)), entry.getModel(), entry.getNormal());
-                    consumer = (layer) -> layer.hasCrumbling() ? VertexConsumers.dual(transformer, immediate.getBuffer(layer)) : immediate.getBuffer(layer);
+                    consumer = (layer) -> layer.hasCrumbling() ? VertexConsumers.union(transformer, immediate.getBuffer(layer)) : immediate.getBuffer(layer);
                 }
             }
 
@@ -426,5 +426,9 @@ public class SodiumWorldRenderer implements ChunkStatusListener {
 
     public ChunkRenderBackend<?> getChunkRenderer() {
         return this.chunkRenderBackend;
+    }
+
+    public ChunkRenderManager<?> getChunkRenderManager() {
+        return this.chunkRenderManager;
     }
 }
