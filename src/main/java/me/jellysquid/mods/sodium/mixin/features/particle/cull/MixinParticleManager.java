@@ -35,6 +35,13 @@ public class MixinParticleManager {
 
     @Inject(method = "renderParticles", at = @At("HEAD"))
     private void preRenderParticles(MatrixStack matrixStack, VertexConsumerProvider.Immediate immediate, LightmapTextureManager lightmapTextureManager, Camera camera, float f, CallbackInfo ci) {
+        try {
+            SodiumWorldRenderer.getInstance();
+        } catch (IllegalStateException ex){
+            this.cullingFrustum = null;
+            return;
+        }
+
         Frustum frustum = SodiumWorldRenderer.getInstance().getFrustum();
         boolean useCulling = SodiumClientMod.options().advanced.useParticleCulling;
 

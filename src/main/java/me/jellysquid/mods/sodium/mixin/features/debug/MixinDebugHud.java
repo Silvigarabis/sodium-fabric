@@ -64,10 +64,15 @@ public abstract class MixinDebugHud {
     }
 
     private static List<String> getChunkRendererDebugStrings() {
-        ChunkRenderBackend<?> backend = SodiumWorldRenderer.getInstance().getChunkRenderer();
+        ChunkRenderBackend<?> backend;
+        try {
+            backend = SodiumWorldRenderer.getInstance().getChunkRenderer();
+        } catch (IllegalStateException ex){
+            backend = null;
+        }
 
         List<String> strings = new ArrayList<>(4);
-        strings.add("Chunk Renderer: " + backend.getRendererName());
+        strings.add("Chunk Renderer: " + backend == null ? "<not found>" : backend.getRendererName());
         strings.addAll(backend.getDebugStrings());
 
         return strings;

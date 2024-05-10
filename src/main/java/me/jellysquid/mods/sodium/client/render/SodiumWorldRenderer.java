@@ -66,7 +66,8 @@ public class SodiumWorldRenderer implements ChunkStatusListener {
      */
     public static SodiumWorldRenderer create() {
         if (instance == null) {
-            instance = new SodiumWorldRenderer(MinecraftClient.getInstance());
+            //instance = new SodiumWorldRenderer(MinecraftClient.getInstance());
+            instance = null;
         }
 
         return instance;
